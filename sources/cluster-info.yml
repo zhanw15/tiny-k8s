@@ -1,0 +1,51 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubeadm:bootstrap-signer-clusterinfo
+  namespace: kube-public
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - cluster-info
+  resources:
+  - configmaps
+  verbs:
+  - get
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubeadm:bootstrap-signer-clusterinfo
+  namespace: kube-public
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kubeadm:bootstrap-signer-clusterinfo
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:anonymous
+
+---
+apiVersion: v1
+data:
+  #jws-kubeconfig-5fozw7: eyJhbGciOiJIUzI1NiIsImtpZCI6IjVmb3p3NyJ9..ycbGqGegrmsR_SrW3ZupMIBwaXRzLuIUpE8ZC0FLcMw
+  kubeconfig: |
+    apiVersion: v1
+    clusters:
+    - cluster:
+        certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFekNDQWZ1Z0F3SUJBZ0lVV3ZPV2lIWTZJV3EwRExEL0dJeDJIaFdnZ2lZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd0dERVdNQlFHQTFVRUF3d05hM1ZpWlhKdVpYUmxjeTFqWVRBZ0Z3MHlNREE1TVRFd09ERXlORE5hR0E4eQpNVEl3TURneE9EQTRNVEkwTTFvd0dERVdNQlFHQTFVRUF3d05hM1ZpWlhKdVpYUmxjeTFqWVRDQ0FTSXdEUVlKCktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0NnZ0VCQU9sdm83ZUpuZC8rZEdjT1czYnlrOE14TEdlVlVOaVEKdUIwSUVRTFZPcUVITlk4UUpwREdyRzNXRS8yZTVyVEljNzFBY2V5U0d0Ym1RSHd5dmVSQVd0Zy9EaU1lSkZnLwpwY3JnZVJtK2pHd3I5bFJhaEFvMWo2cVd2bmFNZUxFb3loaTRsZ2E0OXVTUU5BbzJ2aXBWcU5rOVFJSGF2aUNwCjZIOWREWlRoZGFBNFpnTHB6Ly8yNHJLTDAyTkpCdUIxOGJwQ2VFYkhJRTdEZEFycVhPQVRYaExNVU1FVHRwMS8KRmMvQVRhTmIyWjUyNWFlbVo2cFVWOEVSQ0NRTWpSd1RGRjJzY2MrUmlJa1Q4TUJCeEFMd3pPa3FEUWtTbmFhWgozazU1QnhyOTB1SlZIZTJzTFdKVllodkI0MVBxOU5GeHN5SmhBUFVWblVZWWxJQTlZd3l1bTg4Q0F3RUFBYU5UCk1GRXdIUVlEVlIwT0JCWUVGSzBZaGhBcWwrN1c2dUdsTFhKRnVFck9SQlZLTUI4R0ExVWRJd1FZTUJhQUZLMFkKaGhBcWwrN1c2dUdsTFhKRnVFck9SQlZLTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSktvWklodmNOQVFFTApCUUFEZ2dFQkFGdXNRM2p3djByaE5McndJSi9seStxL09seG5kaVBMSm1teEFnSXk1Wm5XeW1hTktEOGxyNGVwCisyMVJ1YmttbmE5TjJGQkZzaTdtWTJJTHRSSmpBVDkyOE5mSWtRZTh3eWRPUkc4a1ZScG5GTHR4bytPZ1NjdjYKeWhDa0h0WVcyYzdpUGd2T3J3SnkwK3dUNEJidzRZeXhOa05HbmlZQmFoVUlBSGVhZWVuTWd4djYvWDBEcnRNdgpkQnFvWmdrUWVyamU3c1Q0TUJQYVNVZXd1cDRCRW1QT1g0QWFFUzBTcDVWSk1LY1djRlFTeC90NnY4SE51ekpMClFFUCtQbjVRaFBSbGRmTUhTV3ZVNzhsQlFtZjVKVWhnQ0xuTTRFSHV1TFdJa0tiR0l1Sjh2eU45bFd5TEVxbnIKTVY2MHh5UWJCUW51T0pXTnc5aUsxNWFwdS9sSmVDOD0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+        server: https://10.110.18.78:30443
+      name: ""
+    contexts: []
+    current-context: ""
+    kind: Config
+    preferences: {}
+    users: []
+kind: ConfigMap
+metadata:
+  name: cluster-info
+  namespace: kube-public
