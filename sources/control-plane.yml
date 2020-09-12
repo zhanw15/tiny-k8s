@@ -6,7 +6,7 @@ metadata:
   name: tiny-apiserver
   namespace: tiny-k8s
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: tiny-k8s
@@ -20,6 +20,8 @@ spec:
       containers:
       - command:
         - kube-apiserver
+        ### 设置 apiserver 不自动刷新 kubernetes endpoints
+        - --endpoint-reconciler-type=none
         - --enable-bootstrap-token-auth=true
         - --allow-privileged=true
         - --authorization-mode=Node,RBAC
