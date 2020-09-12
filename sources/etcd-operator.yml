@@ -1,15 +1,9 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: tiny-k8s
-
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: etcd-operator
-  namespace: tiny-k8s
+  namespace: kube-system
 spec:
   replicas: 1
   template:
@@ -22,8 +16,7 @@ spec:
         image: quay.io/coreos/etcd-operator:v0.9.4
         command:
         - etcd-operator
-        # Uncomment to act for resources in all namespaces. More information in doc/user/clusterwide.md
-        #- -cluster-wide
+        - -cluster-wide # 管理所有节点 etcd 集群
         env:
         - name: MY_POD_NAMESPACE
           valueFrom:
@@ -46,7 +39,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: default
-  namespace: tiny-k8s
+  namespace: kube-system
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
