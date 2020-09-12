@@ -1,3 +1,4 @@
+### cluster-info
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -32,12 +33,11 @@ subjects:
 ---
 apiVersion: v1
 data:
-  #jws-kubeconfig-5fozw7: eyJhbGciOiJIUzI1NiIsImtpZCI6IjVmb3p3NyJ9..ycbGqGegrmsR_SrW3ZupMIBwaXRzLuIUpE8ZC0FLcMw
   kubeconfig: |
     apiVersion: v1
     clusters:
     - cluster:
-        certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFekNDQWZ1Z0F3SUJBZ0lVV3ZPV2lIWTZJV3EwRExEL0dJeDJIaFdnZ2lZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd0dERVdNQlFHQTFVRUF3d05hM1ZpWlhKdVpYUmxjeTFqWVRBZ0Z3MHlNREE1TVRFd09ERXlORE5hR0E4eQpNVEl3TURneE9EQTRNVEkwTTFvd0dERVdNQlFHQTFVRUF3d05hM1ZpWlhKdVpYUmxjeTFqWVRDQ0FTSXdEUVlKCktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0NnZ0VCQU9sdm83ZUpuZC8rZEdjT1czYnlrOE14TEdlVlVOaVEKdUIwSUVRTFZPcUVITlk4UUpwREdyRzNXRS8yZTVyVEljNzFBY2V5U0d0Ym1RSHd5dmVSQVd0Zy9EaU1lSkZnLwpwY3JnZVJtK2pHd3I5bFJhaEFvMWo2cVd2bmFNZUxFb3loaTRsZ2E0OXVTUU5BbzJ2aXBWcU5rOVFJSGF2aUNwCjZIOWREWlRoZGFBNFpnTHB6Ly8yNHJLTDAyTkpCdUIxOGJwQ2VFYkhJRTdEZEFycVhPQVRYaExNVU1FVHRwMS8KRmMvQVRhTmIyWjUyNWFlbVo2cFVWOEVSQ0NRTWpSd1RGRjJzY2MrUmlJa1Q4TUJCeEFMd3pPa3FEUWtTbmFhWgozazU1QnhyOTB1SlZIZTJzTFdKVllodkI0MVBxOU5GeHN5SmhBUFVWblVZWWxJQTlZd3l1bTg4Q0F3RUFBYU5UCk1GRXdIUVlEVlIwT0JCWUVGSzBZaGhBcWwrN1c2dUdsTFhKRnVFck9SQlZLTUI4R0ExVWRJd1FZTUJhQUZLMFkKaGhBcWwrN1c2dUdsTFhKRnVFck9SQlZLTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSktvWklodmNOQVFFTApCUUFEZ2dFQkFGdXNRM2p3djByaE5McndJSi9seStxL09seG5kaVBMSm1teEFnSXk1Wm5XeW1hTktEOGxyNGVwCisyMVJ1YmttbmE5TjJGQkZzaTdtWTJJTHRSSmpBVDkyOE5mSWtRZTh3eWRPUkc4a1ZScG5GTHR4bytPZ1NjdjYKeWhDa0h0WVcyYzdpUGd2T3J3SnkwK3dUNEJidzRZeXhOa05HbmlZQmFoVUlBSGVhZWVuTWd4djYvWDBEcnRNdgpkQnFvWmdrUWVyamU3c1Q0TUJQYVNVZXd1cDRCRW1QT1g0QWFFUzBTcDVWSk1LY1djRlFTeC90NnY4SE51ekpMClFFUCtQbjVRaFBSbGRmTUhTV3ZVNzhsQlFtZjVKVWhnQ0xuTTRFSHV1TFdJa0tiR0l1Sjh2eU45bFd5TEVxbnIKTVY2MHh5UWJCUW51T0pXTnc5aUsxNWFwdS9sSmVDOD0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+        certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01Ea3hNakE0TXpRME1sb1hEVE13TURreE1EQTRNelEwTWxvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTUVaCnBqUG1XTXNqeGJrQzRoaHpnamtNZUkwdnI2VkVxaXdlb1hxWTJ2ekNmbXI0Y21MNlowWWRWZzdQQmxxQUwrL0sKd0FLQVV4QTAvTGsycG1iQWRlOERtQlNFdStmbFc4YWMxUnlZYy8rSENIUHQ5SHRJb0d0emw0YW42MWF2SWQ0cwppVXhDeDEzTmRZWDQ1QmU2K3dUZFF4NDA0Y0JMODhCRjQycHZEak1vcmh3Ri8rNUp2T0w0MWErSjNpUzVUNTE3CkQxb1NVWmFOSytHeXZtZHpKd2Y4RTk4K2U3OVcrcGVHZjZEaUsweTFCbFlIRTZ1VTlNMTRRVFc3c1J2dHhIYWkKM2N0R1FTOFY2OVdiQzAwYWFaRXAybzJWSTlqTXFTdUlKZDZxZjBGSW91KzFmNDg1WTdqWFB3RmlJUE1wNThCcApQaG5pbXliMUQxTzBxbnI0azlzQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFIbmR0OWlaTko4Wko5R2ViYW90VmlwUFVRL3MKb0h6L0pzTFNQSE14NlM2NThPV1NyUDF5YWZydnlUZHc4US8zdm1aMHVIdTc4T2lBSVlObGVMbitLZ21WQjlSUwpRT1JRSHlwNWVTSERqTTN3RjZ4L0wxTUExSGJVVDBpY0pZWll2RmJlUmV3VDg5VDNPVnVHVWNVNERZNFVScWRjCmwwYUtLcFgyaXc3M29nV1kva2MxUktoL1lQSFd1NitWa3EyQUw2WkR1ZEFUSFZXS0dXZGt0cjFGZGtmRkg4aTAKK1h6dXhVVi8xM2VxSm1DUmN0NExBWW41UCtTSkNDSGVDbVhsKzJieFo5L2FBeVBRTDkwZ0xXZTZBMGxBNW9OdQpyclAvNFM0Y2c3LzUxTlp6REUyRVZRTTlRb3NoMXlsa2NtZGVUdDZWajhyRjBJQVBMUnBvWXFHNm9WZz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
         server: https://10.110.18.78:30443
       name: ""
     contexts: []
@@ -49,3 +49,440 @@ kind: ConfigMap
 metadata:
   name: cluster-info
   namespace: kube-public
+
+### 自动签名证书
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubeadm:kubelet-bootstrap
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:node-bootstrapper
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:bootstrappers:kubeadm:default-node-token
+
+  
+### kube-proxy config
+---
+apiVersion: v1
+data:
+  config.conf: |-
+    apiVersion: kubeproxy.config.k8s.io/v1alpha1
+    bindAddress: 0.0.0.0
+    clientConnection:
+      acceptContentTypes: ""
+      burst: 10
+      contentType: application/vnd.kubernetes.protobuf
+      kubeconfig: /var/lib/kube-proxy/kubeconfig.conf
+      qps: 5
+    clusterCIDR: ""
+    configSyncPeriod: 15m0s
+    conntrack:
+      maxPerCore: 32768
+      min: 131072
+      tcpCloseWaitTimeout: 1h0m0s
+      tcpEstablishedTimeout: 24h0m0s
+    enableProfiling: false
+    healthzBindAddress: 0.0.0.0:10256
+    hostnameOverride: ""
+    iptables:
+      masqueradeAll: false
+      masqueradeBit: 14
+      minSyncPeriod: 0s
+      syncPeriod: 30s
+    ipvs:
+      excludeCIDRs: null
+      minSyncPeriod: 0s
+      scheduler: ""
+      strictARP: false
+      syncPeriod: 30s
+    kind: KubeProxyConfiguration
+    metricsBindAddress: 127.0.0.1:10249
+    mode: ""
+    nodePortAddresses: null
+    oomScoreAdj: -999
+    portRange: ""
+    udpIdleTimeout: 250ms
+    winkernel:
+      enableDSR: false
+      networkName: ""
+      sourceVip: ""
+  kubeconfig.conf: |-
+    apiVersion: v1
+    kind: Config
+    clusters:
+    - cluster:
+        certificate-authority: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        server: https://10.110.18.78:30443
+      name: default
+    contexts:
+    - context:
+        cluster: default
+        namespace: default
+        user: default
+      name: default
+    current-context: default
+    users:
+    - name: default
+      user:
+        tokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+kind: ConfigMap
+metadata:
+  labels:
+    app: kube-proxy
+  name: kube-proxy
+  namespace: kube-system
+
+### kube-proxy sa
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kube-proxy
+  namespace: kube-system
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kube-proxy
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - kube-proxy
+  resources:
+  - configmaps
+  verbs:
+  - get
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kube-proxy
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kube-proxy
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:bootstrappers:kubeadm:default-node-token
+
+### kube-proxy
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  annotations:
+    deprecated.daemonset.template.generation: "1"
+  generation: 1
+  labels:
+    k8s-app: kube-proxy
+  name: kube-proxy
+  namespace: kube-system
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: kube-proxy
+  template:
+    metadata:
+      labels:
+        k8s-app: kube-proxy
+    spec:
+      containers:
+      - command:
+        - /usr/local/bin/kube-proxy
+        - --config=/var/lib/kube-proxy/config.conf
+        - --hostname-override=$(NODE_NAME)
+        env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        image: registry.aliyuncs.com/google_containers/kube-proxy:v1.16.12
+        imagePullPolicy: IfNotPresent
+        name: kube-proxy
+        resources: {}
+        securityContext:
+          privileged: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/kube-proxy
+          name: kube-proxy
+        - mountPath: /run/xtables.lock
+          name: xtables-lock
+        - mountPath: /lib/modules
+          name: lib-modules
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      hostNetwork: true
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      priorityClassName: system-node-critical
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: kube-proxy
+      serviceAccountName: kube-proxy
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Exists
+      - operator: Exists
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: kube-proxy
+        name: kube-proxy
+      - hostPath:
+          path: /run/xtables.lock
+          type: FileOrCreate
+        name: xtables-lock
+      - hostPath:
+          path: /lib/modules
+          type: ""
+        name: lib-modules
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+
+### kubeadm config
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubeadm:nodes-kubeadm-config
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - kubeadm-config
+  resources:
+  - configmaps
+  verbs:
+  - get
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubeadm:nodes-kubeadm-config
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kubeadm:nodes-kubeadm-config
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:bootstrappers:kubeadm:default-node-token
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:nodes
+
+---
+apiVersion: v1
+data:
+  ClusterConfiguration: |
+    apiServer:
+      extraArgs:
+        authorization-mode: Node,RBAC
+      timeoutForControlPlane: 4m0s
+    apiVersion: kubeadm.k8s.io/v1beta2
+    certificatesDir: /etc/kubernetes/pki
+    clusterName: kubernetes
+    dns:
+      type: CoreDNS
+    imageRepository: registry.aliyuncs.com/google_containers
+    kind: ClusterConfiguration
+    kubernetesVersion: v1.16.12
+    networking:
+      dnsDomain: cluster.local
+      serviceSubnet: 10.96.0.0/12
+    scheduler: {}
+  ClusterStatus: |
+    apiEndpoints:
+      tiny-k8s:
+        advertiseAddress: 10.110.18.78
+        bindPort: 30443
+    apiVersion: kubeadm.k8s.io/v1beta2
+    kind: ClusterStatus
+kind: ConfigMap
+metadata:
+  name: kubeadm-config
+  namespace: kube-system
+
+### kubelet config
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubeadm:kubelet-config-1.16
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - kubelet-config-1.16
+  resources:
+  - configmaps
+  verbs:
+  - get
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubeadm:kubelet-config-1.16
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kubeadm:kubelet-config-1.16
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:nodes
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:bootstrappers:kubeadm:default-node-token
+
+---
+apiVersion: v1
+data:
+  kubelet: |
+    address: 0.0.0.0
+    apiVersion: kubelet.config.k8s.io/v1beta1
+    authentication:
+      anonymous:
+        enabled: false
+      webhook:
+        cacheTTL: 2m0s
+        enabled: true
+      x509:
+        clientCAFile: /etc/kubernetes/pki/ca.crt
+    authorization:
+      mode: Webhook
+      webhook:
+        cacheAuthorizedTTL: 5m0s
+        cacheUnauthorizedTTL: 30s
+    cgroupDriver: cgroupfs
+    cgroupsPerQOS: true
+    clusterDNS:
+    - 10.96.0.10
+    clusterDomain: cluster.local
+    configMapAndSecretChangeDetectionStrategy: Watch
+    containerLogMaxFiles: 5
+    containerLogMaxSize: 10Mi
+    contentType: application/vnd.kubernetes.protobuf
+    cpuCFSQuota: true
+    cpuCFSQuotaPeriod: 100ms
+    cpuManagerPolicy: none
+    cpuManagerReconcilePeriod: 10s
+    enableControllerAttachDetach: true
+    enableDebuggingHandlers: true
+    enforceNodeAllocatable:
+    - pods
+    eventBurst: 10
+    eventRecordQPS: 5
+    evictionHard:
+      imagefs.available: 15%
+      memory.available: 100Mi
+      nodefs.available: 10%
+      nodefs.inodesFree: 5%
+    evictionPressureTransitionPeriod: 5m0s
+    failSwapOn: true
+    fileCheckFrequency: 20s
+    hairpinMode: promiscuous-bridge
+    healthzBindAddress: 127.0.0.1
+    healthzPort: 10248
+    httpCheckFrequency: 20s
+    imageGCHighThresholdPercent: 85
+    imageGCLowThresholdPercent: 80
+    imageMinimumGCAge: 2m0s
+    iptablesDropBit: 15
+    iptablesMasqueradeBit: 14
+    kind: KubeletConfiguration
+    kubeAPIBurst: 10
+    kubeAPIQPS: 5
+    makeIPTablesUtilChains: true
+    maxOpenFiles: 1000000
+    maxPods: 110
+    nodeLeaseDurationSeconds: 40
+    nodeStatusReportFrequency: 1m0s
+    nodeStatusUpdateFrequency: 10s
+    oomScoreAdj: -999
+    podPidsLimit: -1
+    port: 10250
+    registryBurst: 10
+    registryPullQPS: 5
+    resolvConf: /etc/resolv.conf
+    rotateCertificates: true
+    runtimeRequestTimeout: 2m0s
+    serializeImagePulls: true
+    staticPodPath: /etc/kubernetes/manifests
+    streamingConnectionIdleTimeout: 4h0m0s
+    syncFrequency: 1m0s
+    topologyManagerPolicy: none
+    volumeStatsAggPeriod: 1m0s
+kind: ConfigMap
+metadata:
+  name: kubelet-config-1.16
+  namespace: kube-system
+
+###########
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubeadm:node-autoapprove-bootstrap
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:certificates.k8s.io:certificatesigningrequests:nodeclient
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:bootstrappers:kubeadm:default-node-token
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubeadm:node-autoapprove-certificate-rotation
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:certificates.k8s.io:certificatesigningrequests:selfnodeclient
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:nodes
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubeadm:node-proxier
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:node-proxier
+subjects:
+- kind: ServiceAccount
+  name: kube-proxy
+  namespace: kube-system
+
