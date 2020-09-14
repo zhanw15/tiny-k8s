@@ -134,6 +134,9 @@ spec:
         - --kubeconfig=/etc/kubernetes/kubeconfig/controller-manager.conf
         - --leader-elect=false
         - --use-service-account-credentials=true
+        ### 设置固定 cidr
+        - --allocate-node-cidrs=true
+        - --cluster-cidr=10.244.0.0/16
         image: registry.aliyuncs.com/google_containers/kube-controller-manager:v1.16.12
         imagePullPolicy: IfNotPresent
         name: kube-controller-manager
