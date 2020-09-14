@@ -189,7 +189,7 @@ data:
     cgroupDriver: cgroupfs
     cgroupsPerQOS: true
     clusterDNS:
-    - 10.96.0.10
+    - 10.96.0.3
     clusterDomain: cluster.local
     configMapAndSecretChangeDetectionStrategy: Watch
     containerLogMaxFiles: 5
